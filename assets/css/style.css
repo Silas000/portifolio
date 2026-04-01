@@ -44,3 +44,10 @@ body { font-family: 'Inter', system-ui, sans-serif; }
   box-shadow: 0 0 50px rgba(6, 182, 212, 0.6);
   border-color: #06b6d4;
 }
+.progress-bar {
+    height: 100%;
+    background-color: #22d3ee; 
+    transition: width 1s ease; 
+    width: 0%;
+  }
+  
