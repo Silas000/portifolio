@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silas Rosário | Desenvolvedor Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0a0a] text-white overflow-x-hidden">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-cyan-500/20">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-4xl font-bold title-font tracking-tighter neon-cyan">SILAS.</div>
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#sobre" class="hover:text-cyan-400 transition">Sobre</a>
+        <a href="#habilidades" class="hover:text-cyan-400 transition">Habilidades</a>
+        <a href="#projetos" class="hover:text-cyan-400 transition">Projetos</a>
+        <a href="#contato" class="hover:text-cyan-400 transition">Contato</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 z-50 pt-20">
+    <div class="flex flex-col items-center gap-8 text-2xl font-medium">
+      <a href="#sobre" class="mobile-link">Sobre</a>
+      <a href="#habilidades" class="mobile-link">Habilidades</a>
+      <a href="#projetos" class="mobile-link">Projetos</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-[#0a0a0a] via-[#0f172a] to-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h1 class="lightning-name title-font">SILAS ROSÁRIO</h1>
+        <p class="text-4xl md:text-5xl text-cyan-400 font-light">Desenvolvedor Web Full Stack</p>
+        <p class="text-xl text-zinc-400 max-w-lg">
+          +4 anos criando soluções web profissionais com Laravel, WordPress, PHP e JavaScript.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projetos" class="px-10 py-5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold rounded-2xl flex items-center gap-3 transition text-lg">
+            <i class="fas fa-rocket"></i> Ver Projetos
+          </a>
+          <a href="#contato" class="px-10 py-5 border-2 border-cyan-500 hover:border-cyan-400 rounded-2xl transition text-lg">
+            Falar comigo
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative w-65 h-80">
+          <div class="absolute inset-0 bg-cyan-500/10 rounded-full blur-3xl"></div>
+          <img src="https://i.imgur.com/fGFgCrx.jpeg" 
+               alt="Silas Rosário" 
+               class="w-full h-full object-cover rounded-3xl border-4 border-cyan-500 shadow-2xl shadow-cyan-500/50">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="py-24 bg-[#111111]">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16 neon-cyan">Sobre mim</h2>
+      <div class="text-lg text-zinc-300 leading-relaxed space-y-8 text-center md:text-left">
+        <p>Desenvolvedor web com mais de 4 anos de experiência em PHP, Laravel e WordPress.</p>
+        <p>Especialista na criação e customização de sites institucionais, e-commerces, plugins personalizados e integração com WooCommerce.</p>
+        <p>Domínio sólido em front-end e back-end, sempre com foco em performance, SEO e soluções escaláveis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="py-24 bg-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16 neon-cyan">Habilidades Técnicas</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl">🐘</div>
+            <div><h3 class="text-2xl font-semibold">PHP</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
+          </div>
+        </div>
+
+        <div class="glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl">⚡</div>
+            <div><h3 class="text-2xl font-semibold">Laravel 11</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
+          </div>
+          <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="progress-bar" data-width="90%"></div>
+          </div>
+        </div>
+
+        <div class="glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl">📦</div>
+            <div><h3 class="text-2xl font-semibold">WordPress + WooCommerce</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
+          </div>
+          <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="progress-bar" data-width="92%"></div>
+          </div>
+        </div>
+
+        <div class="glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl">💻</div>
+            <div><h3 class="text-2xl font-semibold">JavaScript ES6+</h3><p class="text-cyan-400 text-sm">Intermediário</p></div>
+          </div>
+          <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="progress-bar" data-width="75%"></div>
+          </div>
+        </div>
+
+        <div class="glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl">🌐</div>
+            <div><h3 class="text-2xl font-semibold">HTML5 + CSS3</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
+          </div>
+          <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="progress-bar" data-width="88%"></div>
+          </div>
+        </div>
+
+        <div class="glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl">🛠️</div>
+            <div><h3 class="text-2xl font-semibold">MySQL • Git • APIs • SEO</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
+          </div>
+          <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div class="progress-bar" data-width="85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="py-24 bg-[#111111]">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-16 neon-cyan">Projetos em Destaque</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="project-card glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-2xl font-semibold">FlowStock</h3>
+            <a href="https://github.com/Silas000/FlowStock" target="_blank" class="text-cyan-400 hover:text-cyan-300"><i class="fab fa-github text-3xl"></i></a>
+          </div>
+          <p class="text-zinc-400 mb-6">Sistema completo de gestão de estoque desenvolvido com as melhores práticas.</p>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full">Laravel + Blade</span>
+        </div>
+
+        <div class="project-card glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-2xl font-semibold">bloqueio-back</h3>
+            <a href="https://github.com/Silas000/bloqueio-back" target="_blank" class="text-cyan-400 hover:text-cyan-300"><i class="fab fa-github text-3xl"></i></a>
+          </div>
+          <p class="text-zinc-400 mb-6">Servidor que bloqueia remotamente celular via APK instalado.</p>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full">Backend</span>
+        </div>
+
+        <div class="project-card glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-2xl font-semibold">Rick and Morty Info</h3>
+            <a href="https://github.com/Silas000/rick-and-morty-info-api" target="_blank" class="text-cyan-400 hover:text-cyan-300"><i class="fab fa-github text-3xl"></i></a>
+          </div>
+          <p class="text-zinc-400 mb-6">Aplicação web para pesquisar personagens do universo de Rick and Morty.</p>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full">JavaScript + API</span>
+        </div>
+
+        <div class="project-card glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-2xl font-semibold">Engineering Math Solver</h3>
+            <a href="https://github.com/Silas000/engineering-math-solver" target="_blank" class="text-cyan-400 hover:text-cyan-300"><i class="fab fa-github text-3xl"></i></a>
+          </div>
+          <p class="text-zinc-400 mb-6">Suíte de ferramentas interativas para resolver problemas de engenharia.</p>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full">Python</span>
+        </div>
+
+        <div class="project-card glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-2xl font-semibold">ToDoList</h3>
+            <a href="https://github.com/Silas000/ToDoList" target="_blank" class="text-cyan-400 hover:text-cyan-300"><i class="fab fa-github text-3xl"></i></a>
+          </div>
+          <p class="text-zinc-400 mb-6">To-Do List completa com banco SQLite.</p>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full">Python + SQLite</span>
+        </div>
+
+        <div class="project-card glass p-8 rounded-3xl border border-cyan-500/30">
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="text-2xl font-semibold">Analisador de Texto</h3>
+            <a href="https://github.com/Silas000/analisadorTexto" target="_blank" class="text-cyan-400 hover:text-cyan-300"><i class="fab fa-github text-3xl"></i></a>
+          </div>
+          <p class="text-zinc-400 mb-6">Analisador de texto com contagem de palavras e frases.</p>
+          <span class="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full">Python</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-24 bg-[#0a0a0a]">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold mb-10 neon-cyan">Vamos trabalhar juntos?</h2>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="mailto:silasr52@gmail.com" class="flex-1 max-w-xs mx-auto sm:mx-0 bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-6 rounded-3xl text-xl flex items-center justify-center gap-4 transition">
+          <i class="fas fa-envelope"></i> silasr52@gmail.com
+        </a>
+        <a href="tel:+5524998537272" class="flex-1 max-w-xs mx-auto sm:mx-0 border-2 border-cyan-500 hover:border-cyan-400 py-6 rounded-3xl text-xl flex items-center justify-center gap-4 transition">
+          <i class="fas fa-phone"></i> (24) 99853-7272
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 text-center text-zinc-600 text-sm border-t border-cyan-500/10">
+    © 2026 Silas Rosário da Silva • Portfólio feito com HTML, CSS e JavaScript
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
