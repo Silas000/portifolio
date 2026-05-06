@@ -14,14 +14,19 @@
   <!-- NAV -->
   <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-cyan-500/20">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="text-4xl font-bold title-font tracking-tighter neon-cyan">SILAS.</div>
+      <div class="text-4xl font-bold title-font tracking-tighter neon-cyan top-1">SILAS.</div>
       <div class="hidden md:flex gap-8 text-sm font-medium">
         <a href="#sobre" class="hover:text-cyan-400 transition">Sobre</a>
         <a href="#habilidades" class="hover:text-cyan-400 transition">Habilidades</a>
         <a href="#projetos" class="hover:text-cyan-400 transition">Projetos</a>
         <a href="#contato" class="hover:text-cyan-400 transition">Contato</a>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+      <div class="md:hidden flex justify-end pr-4">
+        <button id="mobile-menu-btn" class="text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      
     </div>
   </nav>
 
@@ -92,7 +97,7 @@
             <div><h3 class="text-2xl font-semibold">PHP</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
           </div>
           <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="progress-bar" style="width: 95%"></div>
+            <div class="progress-bar" data-width="100%"></div>
           </div>
         </div>
 
@@ -102,7 +107,7 @@
             <div><h3 class="text-2xl font-semibold">Laravel 11+</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
           </div>
           <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="progress-bar" style="width: 95%"></div>
+            <div class="progress-bar" data-width="100%"></div>
           </div>
         </div>
 
@@ -112,7 +117,7 @@
             <div><h3 class="text-2xl font-semibold">WordPress + WooCommerce</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
           </div>
           <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="progress-bar" style="width: 95%"></div>
+            <div class="progress-bar" data-width="100%"></div>
           </div>
         </div>
 
@@ -122,7 +127,7 @@
             <div><h3 class="text-2xl font-semibold">JavaScript ES6+</h3><p class="text-cyan-400 text-sm">Intermediário</p></div>
           </div>
           <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="progress-bar" style="width: 75%"></div>
+            <div class="progress-bar" data-width="85%"></div>
           </div>
         </div>
 
@@ -132,17 +137,17 @@
             <div><h3 class="text-2xl font-semibold">HTML5 + CSS3</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
           </div>
           <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="progress-bar" style="width: 88%"></div>
+            <div class="progress-bar"  data-width="100%"></div>
           </div>
         </div>
 
         <div class="glass p-8 rounded-3xl border border-cyan-500/30">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-3xl">🛠️</div>
-            <div><h3 class="text-2xl font-semibold">MySQL • Git • APIs • SEO</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
+            <div><h3 class="text-2xl font-semibold">MySQL • Git • APIs</h3><p class="text-cyan-400 text-sm">Avançado</p></div>
           </div>
           <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
-            <div class="progress-bar" style="width: 85%"></div>
+            <div class="progress-bar"  data-width="100%"></div>
           </div>
         </div>
       </div>
@@ -211,18 +216,16 @@
     </div>
   </section>
 
-  <!-- CONTATO - TOTALMENTE CORRIGIDO -->
+  <!-- CONTATO -->
   <section id="contato" class="py-24 bg-[#0a0a0a]">
     <div class="max-w-2xl mx-auto px-6 text-center">
       <h2 class="text-5xl font-bold mb-10 neon-cyan">Vamos trabalhar juntos?</h2>
-      <p class="text-xl text-zinc-400 mb-12">Estou disponível para novos projetos e oportunidades em 2026.</p>
-      
       <div class="flex flex-col gap-5 max-w-md mx-auto">
         <!-- Email -->
         <a href="mailto:silasr52@gmail.com" 
            class="px-10 py-6 bg-cyan-500 hover:bg-cyan-400 text-black font-bold rounded-3xl flex items-center justify-center gap-4 transition text-xl">
           <i class="fas fa-envelope text-2xl"></i>
-          silasr52@gmail.com
+          Enviar E-mail
         </a>
 
         <!-- WhatsApp -->
