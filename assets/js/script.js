@@ -46,7 +46,7 @@ function animateProgressBars() {
     });
   });
   function scrambleText(el, newText) {
-    const chars = "!<>-_\\/[]{}—=+*^?#________";
+    const chars = "!<>-_XasWExfAQxghPpoelXICOn";
     let iteration = 0;
     const interval = setInterval(() => {
       el.textContent = newText
@@ -59,9 +59,9 @@ function animateProgressBars() {
 
       if (iteration >= newText.length) clearInterval(interval);
       iteration += 1/3;
-    }, 30);
+    }, 10);
   }
-
+  
   window.onload = () => {
     scrambleText(document.querySelector(".scramble"), "SILAS ROSÁRIO");
     scrambleText(document.querySelector(".scramble-role"), "Desenvolvedor Web Full Stack");
