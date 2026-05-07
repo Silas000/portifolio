@@ -65,4 +65,8 @@ function animateProgressBars() {
   window.onload = () => {
     scrambleText(document.querySelector(".scramble"), "SILAS ROSÁRIO");
     scrambleText(document.querySelector(".scramble-role"), "Desenvolvedor Web Full Stack");
+    const paragraphs = document.querySelectorAll(".scramble-role p");
+    paragraphs.forEach(p => {
+      scrambleText(p, p.textContent);
+    });
   };
