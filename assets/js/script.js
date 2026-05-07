@@ -45,3 +45,24 @@ function animateProgressBars() {
       }
     });
   });
+  function scrambleText(el, newText) {
+    const chars = "!<>-_\\/[]{}—=+*^?#________";
+    let iteration = 0;
+    const interval = setInterval(() => {
+      el.textContent = newText
+        .split("")
+        .map((letter, index) => {
+          if (index < iteration) return newText[index];
+          return chars[Math.floor(Math.random() * chars.length)];
+        })
+        .join("");
+
+      if (iteration >= newText.length) clearInterval(interval);
+      iteration += 1/3;
+    }, 30);
+  }
+
+  window.onload = () => {
+    scrambleText(document.querySelector(".scramble"), "SILAS ROSÁRIO");
+    scrambleText(document.querySelector(".scramble-role"), "Desenvolvedor Web Full Stack");
+  };
