@@ -1,72 +1,125 @@
-function animateProgressBars() {
-    const bars = document.querySelectorAll('.progress-bar');
-    bars.forEach((bar, index) => {
-      const targetWidth = bar.getAttribute('data-width');
-      bar.style.width = '0%';
-      
-      setTimeout(() => {
-        bar.style.width = targetWidth;
-      }, 400 + (index * 180));
+// Portfolio — Silas Rosário
+// JS vanilla, sem dependências externas
+
+(function() {
+  'use strict';
+
+  // ─── Elements ─────────────────────────────────────────────
+  const navbar = document.getElementById('navbar');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileClose = document.getElementById('mobile-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const progressBars = document.querySelectorAll('.progress-bar');
+
+  // ─── Navbar scroll effect ─────────────────────────────────
+  function handleScroll() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // ─── Mobile menu ──────────────────────────────────────────
+  function openMenu() {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  menuToggle.addEventListener('click', openMenu);
+  mobileClose.addEventListener('click', closeMenu);
+  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+  // Fechar menu ao clicar fora
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) closeMenu();
+  });
+
+  // ─── Scroll reveal (IntersectionObserver) ─────────────────
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Adicionar classe .reveal aos elementos que devem animar
+  function initReveal() {
+    const selectors = [
+      '.section-title',
+      '.about-text',
+      '.skill-card',
+      '.project-card',
+      '.contact-buttons'
+    ];
+
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+      });
     });
   }
-  
-  window.addEventListener('load', () => {
-    setTimeout(animateProgressBars, 600);
-  });
-  
-  // MOBILE MENU
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  let isOpen = false;
-  
-  menuBtn.addEventListener('click', () => {
-    isOpen = !isOpen;
-    mobileMenu.classList.toggle('hidden');
-    menuBtn.innerHTML = isOpen ? 
-      '<i class="fas fa-times"></i>' : 
-      '<i class="fas fa-bars"></i>';
-  });
-  
-  // SMOOTH SCROLL
+
+  // ─── Animate progress bars ────────────────────────────────
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.dataset.width;
+        if (width) {
+          // Pequeno delay para efeito visual
+          setTimeout(() => {
+            bar.style.width = width + '%';
+          }, 200);
+        }
+        progressObserver.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  progressBars.forEach(bar => progressObserver.observe(bar));
+
+  // ─── Smooth scroll for anchor links ───────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      if (this.getAttribute('href') !== '#') {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+
+      const target = document.querySelector(href);
+      if (target) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-          
-          if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            isOpen = false;
-            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-          }
-        }
+        const offset = navbar.offsetHeight + 20;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
-  function scrambleText(el, newText) {
-    const chars = "!<>-_XasWExfAQxghPpoelXICOn";
-    let iteration = 0;
-    const interval = setInterval(() => {
-      el.textContent = newText
-        .split("")
-        .map((letter, index) => {
-          if (index < iteration) return newText[index];
-          return chars[Math.floor(Math.random() * chars.length)];
-        })
-        .join("");
 
-      if (iteration >= newText.length) clearInterval(interval);
-      iteration += 1/3;
-    }, 10);
-  }
-  
-  window.onload = () => {
-    // scrambleText(document.querySelector(".scramble"), "SILAS ROSÁRIO");
-    // scrambleText(document.querySelector(".scramble-role"), "Desenvolvedor Web Full Stack");
-    const paragraphs = document.querySelectorAll(".scramble-role p");
-    paragraphs.forEach(p => {
-      scrambleText(p, p.textContent);
-    });
-  };
+  // ─── Keyboard shortcuts ───────────────────────────────────
+  document.addEventListener('keydown', (e) => {
+    // Escape fecha menu mobile
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // ─── Init ─────────────────────────────────────────────────
+  initReveal();
+
+  console.log('✓ Portfolio loaded — Silas Rosário');
+})();
